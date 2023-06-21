@@ -1,0 +1,22 @@
+const nome = 'Thierry Dionisio Amorim';
+let idade = 18;
+let linguagens = 'HTML, CSS e JavaScript'
+
+console.log("Olá " + nome + ", você tem " + idade + " anos e já está aprendendo " + linguagens + "!");
+
+alert("Olá " + nome + ", você tem " + idade + " anos e já está aprendendo " + linguagens + "!");
+
+const fraseNome = prompt("Qual é o seu nome?");
+const fraseIdade= prompt("Quantos anos você tem?");
+const fraseLinguagens= prompt("Quais linguagen de programação você está estudando?");
+alert("Olá " + fraseNome + ", você tem " + fraseIdade + " anos e já está aprendendo " + fraseLinguagens + "!");
+
+let opiniao = prompt("Você gosta de estudar " + linguagens + "?  Responda com o número 1 para SIM ou 2 para NÃO.");
+
+if(opiniao == 1){
+  alert("Muito bom! Continue estudando e você terá muito sucesso.")
+}else if (opiniao == 2){
+  alert("Tente experimentar outras linguagens")
+}else{
+  alert("Resposta inválida")
+}
