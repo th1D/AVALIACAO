@@ -1,0 +1,22 @@
+const numeroAleatorio = Math.floor(Math.random() * 11);
+
+let tentativas = 3;
+let acertou = false;
+
+while (tentativas > 0) {
+  const chute = parseInt(prompt("Digite um número entre 0 e 10:"));
+
+  if (chute === numeroAleatorio) {
+    acertou = true;
+    break;
+  } else {
+    tentativas--;
+    alert(`Você errou! Restam ${tentativas} tentativas.`);
+  }
+}
+
+if (acertou) {
+  alert("Parabéns! Você acertou o número!");
+} else {
+  alert(`Suas tentativas acabaram. O número correto era ${numeroAleatorio}.`);
+}
