@@ -1,0 +1,51 @@
+function soma(num1, num2) {
+  return num1 + num2;
+}
+
+function subtracao(num1, num2) {
+  return num1 - num2;
+}
+
+function multiplicacao(num1, num2) {
+  return num1 * num2;
+}
+
+function divisao(num1, num2) {
+  return num1 / num2;
+}
+
+let continuar = true;
+
+while (continuar) {
+  const operacao = prompt("Escolha uma operação: soma, subtração, multiplicação, divisão ou sair");
+
+  switch (operacao.toLowerCase()) {
+    case "soma":
+      const somaNum1 = parseFloat(prompt("Digite o primeiro número:"));
+      const somaNum2 = parseFloat(prompt("Digite o segundo número:"));
+      console.log(`Resultado: ${soma(somaNum1, somaNum2)}`);
+      break;
+    case "subtração":
+      const subNum1 = parseFloat(prompt("Digite o primeiro número:"));
+      const subNum2 = parseFloat(prompt("Digite o segundo número:"));
+      console.log(`Resultado: ${subtracao(subNum1, subNum2)}`);
+      break;
+    case "multiplicação":
+      const multNum1 = parseFloat(prompt("Digite o primeiro número:"));
+      const multNum2 = parseFloat(prompt("Digite o segundo número:"));
+      console.log(`Resultado: ${multiplicacao(multNum1, multNum2)}`);
+      break;
+    case "divisão":
+      const divNum1 = parseFloat(prompt("Digite o primeiro número:"));
+      const divNum2 = parseFloat(prompt("Digite o segundo número:"));
+      console.log(`Resultado: ${divisao(divNum1, divNum2)}`);
+      break;
+    case "sair":
+      continuar = false;
+      console.log("Até a próxima!");
+      break;
+    default:
+      console.log("Operação inválida!");
+      break;
+  }
+}
