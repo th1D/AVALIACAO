@@ -1,0 +1,60 @@
+const listaCompras = {
+  frutas: [],
+  carnes: [],
+  salgados: [],
+  doces: []
+};
+
+let adicionarMais = true;
+
+while (adicionarMais) {
+  const adicionar = prompt("Deseja adicionar um alimento à lista de compras? (sim/não)");
+
+  if (adicionar.toLowerCase() === "sim") {
+    const alimento = prompt("Digite o nome do alimento:");
+    const categoria = prompt("Digite a categoria do alimento:");
+
+    if (listaCompras.hasOwnProperty(categoria)) {
+      listaCompras[categoria].push(alimento);
+    } else {
+      listaCompras[categoria] = [alimento];
+    }
+  } else if (adicionar.toLowerCase() === "não") {
+    if (Object.keys(listaCompras).length === 0) {
+      console.log("A lista de compras está vazia.");
+    } else {
+      console.log("Lista de compras:");
+
+      for (const categoria in listaCompras) {
+        if (listaCompras[categoria].length > 0) {
+          console.log(`  ${categoria.charAt(0).toUpperCase() + categoria.slice(1)}: ${listaCompras[categoria].join(", ")}`);
+        }
+      }
+
+      const remover = prompt("Deseja remover algum alimento da lista? (sim/não)");
+
+      if (remover.toLowerCase() === "sim") {
+        const alimentoRemover = prompt("Digite o nome do alimento que deseja remover:");
+
+        let removido = false;
+
+        for (const categoria in listaCompras) {
+          const indice = listaCompras[categoria].indexOf(alimentoRemover);
+          if (indice !== -1) {
+            listaCompras[categoria].splice(indice, 1);
+            removido = true;
+            break;
+          }
+        }
+
+        if (removido) {
+          console.log(`${alimentoRemover} foi removido da lista de compras.`);
+        } else {
+          console.log("Não foi possível encontrar o item dentro da lista!");
+        }
+      } else if (remover.toLowerCase() === "não") {
+        adicionarMais = false;
+      }
+    }
+  }
+}
